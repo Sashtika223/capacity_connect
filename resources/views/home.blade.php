@@ -4,11 +4,19 @@
 
 @section('content')
 @php
-    $setting = \App\Models\HomepageSetting::first();
-    $activeCoursesCount = \App\Models\Course::where('publish_status', 'published')->count();
-    $totalCertificatesCount = \App\Models\Certificate::count();
-    $totalUsersCount = \App\Models\User::count();
-    $featuredCourses = \App\Models\Course::where('publish_status', 'published')->with('category', 'trainer')->take(3)->get();
+    try {
+        $setting = \App\Models\HomepageSetting::first();
+        $activeCoursesCount = \App\Models\Course::where('publish_status', 'published')->count();
+        $totalCertificatesCount = \App\Models\Certificate::count();
+        $totalUsersCount = \App\Models\User::count();
+        $featuredCourses = \App\Models\Course::where('publish_status', 'published')->with('category', 'trainer')->take(3)->get();
+    } catch (\Throwable $e) {
+        $setting = null;
+        $activeCoursesCount = 0;
+        $totalCertificatesCount = 0;
+        $totalUsersCount = 0;
+        $featuredCourses = collect();
+    }
 @endphp
 
 <!-- Important Notice Banner (If Configured) -->
