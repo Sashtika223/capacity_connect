@@ -50,9 +50,6 @@ ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
     && sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-# Configure Apache port listening for Render
-RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+EXPOSE 80 8080 10000
 
-EXPOSE 80
-
-CMD ["sh", "-c", "mkdir -p database storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache && touch database/database.sqlite && chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache && chmod -R 777 /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache && php artisan optimize:clear && php artisan migrate --force && php artisan db:seed --force && apache2-foreground"]
+CMD ["sh", "-c", "PORT=${PORT:-8080} && sed -i \"s/80/$PORT/g\" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf && mkdir -p database storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache && touch database/database.sqlite && chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache && chmod -R 777 /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache && if [ -z \"$APP_KEY\" ]; then php artisan key:generate --force; fi && php artisan optimize:clear && php artisan migrate --force && php artisan db:seed --force && apache2-foreground"]
