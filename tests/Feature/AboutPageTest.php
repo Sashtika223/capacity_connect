@@ -11,8 +11,8 @@ class AboutPageTest extends TestCase
         $response = $this->get('/about');
 
         $response->assertStatus(200);
-        $response->assertSee('Building Resilient Workforces for Emergency Readiness');
-        $response->assertSee('Our Mission & Strategic Vision', false);
-        $response->assertSee('Core Architecture & Capabilities', false);
+        $response->assertSeeText('Empowering Organizations & Responders with Next-Gen Capacity Building');
+        $response->assertSeeText('Mission, Vision & Strategic Values');
+        $response->assertSeeText('Platform Core Capabilities');
     }
 }

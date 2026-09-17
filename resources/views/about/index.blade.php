@@ -3,29 +3,27 @@
 @section('title', 'About Us - CapacityConnect Enterprise LMS')
 
 @section('content')
-<!-- Hero Header Section -->
-<section class="text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e293b 100%); min-height: 480px;">
-    <div class="position-absolute top-0 start-50 translate-middle-x w-100 h-100 opacity-30 pointer-events-none" style="background: radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.25) 0%, transparent 50%);"></div>
+<!-- Distinct Hero Header Section for About Us -->
+<section class="text-white py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #0b1329 0%, #111c38 50%, #1e293b 100%); min-height: 420px;">
+    <div class="position-absolute top-0 start-50 translate-middle-x w-100 h-100 opacity-25 pointer-events-none" style="background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.4) 0%, transparent 60%), radial-gradient(circle at 70% 80%, rgba(245, 158, 11, 0.25) 0%, transparent 60%);"></div>
 
-    <div class="container py-lg-5 position-relative z-1">
+    <div class="container py-lg-4 position-relative z-1">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
-                <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill bg-white bg-opacity-10 border border-white border-opacity-25 text-white small fw-semibold mb-4">
-                    <i class="bi bi-shield-fill-check text-warning"></i> National Workforce Readiness Portal
+                <!-- Dedicated About Page Badge -->
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill bg-white bg-opacity-10 border border-white border-opacity-20 text-white small fw-bold mb-3">
+                    <i class="bi bi-info-circle-fill text-warning"></i> ABOUT CAPACITYCONNECT LMS
                 </div>
                 <h1 class="display-4 fw-extrabold text-white mb-3" style="line-height: 1.15; font-family: 'Plus Jakarta Sans', sans-serif;">
-                    Building Resilient Workforces for Emergency Readiness & Enterprise Mastery
+                    Empowering Organizations & Responders with Next-Gen Capacity Building
                 </h1>
                 <p class="lead text-white-50 mb-4 fs-5 mx-auto" style="line-height: 1.6; max-width: 820px;">
-                    CapacityConnect is the premier workforce capacity building platform—unifying operational training, practical disaster response simulations, AI-assisted curriculum drafting, and verifiable competency credentials into one seamless ecosystem.
+                    CapacityConnect is an enterprise-grade Learning Management System built specifically to quantify workforce competencies, simulate real-time crisis scenarios, and issue tamper-proof credentials.
                 </p>
-                <div class="d-flex flex-wrap gap-3 justify-content-center align-items-center">
-                    <a href="{{ route('subject-matching.index') }}" class="btn btn-warning btn-lg fw-bold text-dark px-4 py-3 shadow-lg rounded-3">
-                        <i class="bi bi-intersect me-2"></i> Subject Matchmaker
-                    </a>
-                    <a href="{{ route('contact.index') }}" class="btn btn-outline-light btn-lg px-4 py-3 rounded-3">
-                        <i class="bi bi-envelope me-2"></i> Contact Headquarters
-                    </a>
+                <div class="d-flex flex-wrap gap-2 justify-content-center align-items-center">
+                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill small"><i class="bi bi-check-circle-fill me-1"></i> Disaster Preparedness</span>
+                    <span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25 px-3 py-2 rounded-pill small"><i class="bi bi-cpu-fill me-1"></i> AI-Assisted Curriculum</span>
+                    <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25 px-3 py-2 rounded-pill small"><i class="bi bi-shield-lock-fill me-1"></i> Verifiable Credentials</span>
                 </div>
             </div>
         </div>
@@ -64,20 +62,85 @@
     </div>
 </section>
 
+<!-- Who We Are & Story Section -->
+<section class="py-5 bg-white">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="pe-lg-3">
+                    <span class="badge px-3 py-2 rounded-pill bg-primary-subtle text-primary border border-primary-subtle fw-semibold mb-3">
+                        <i class="bi bi-building me-1"></i> OUR PURPOSE & ORIGIN
+                    </span>
+                    <h2 class="fw-extrabold text-dark display-6 mb-3">Transforming Institutional Skill Mapping & Crisis Action</h2>
+                    <p class="text-muted mb-3 fs-6" style="line-height: 1.7;">
+                        In times of crisis—whether natural disasters, infrastructure challenges, or rapid enterprise transformations—traditional learning management systems fall short. They track completion rates rather than field readiness.
+                    </p>
+                    <p class="text-muted mb-4 fs-6" style="line-height: 1.7;">
+                        <strong>CapacityConnect</strong> was designed from the ground up to bridge the gap between classroom theory and real-world deployment. By integrating interactive disaster simulation branching engines, real-time risk radar analytics, and AI-governed course creation, we ensure organizations are always mission-ready.
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-light border">
+                                <i class="bi bi-diagram-3-fill fs-2 text-primary"></i>
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-0">Branching Drills</h6>
+                                    <small class="text-muted">Simulate critical decisions</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-3 bg-light border">
+                                <i class="bi bi-graph-up-arrow fs-2 text-success"></i>
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-0">Risk Analytics</h6>
+                                    <small class="text-muted">Locate skill blindspots</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-4 p-md-5 rounded-4 text-white shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);">
+                    <div class="position-absolute top-0 end-0 p-4 opacity-10">
+                        <i class="bi bi-shield-check display-1"></i>
+                    </div>
+                    <h3 class="fw-bold text-warning mb-3">Built for High-Stakes Environments</h3>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-6 text-white-50">
+                        <li class="d-flex align-items-start gap-2">
+                            <i class="bi bi-check-circle-fill text-warning mt-1"></i>
+                            <div><strong class="text-white">Emergency Response Agencies:</strong> Train first responders in realistic scenarios with instantaneous feedback.</div>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <i class="bi bi-check-circle-fill text-warning mt-1"></i>
+                            <div><strong class="text-white">Enterprise Organizations:</strong> Upskill workforces at scale with verifiable competency mapping.</div>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <i class="bi bi-check-circle-fill text-warning mt-1"></i>
+                            <div><strong class="text-white">Certified Trainers:</strong> Utilize AI Studio tools to draft modules while keeping full human oversight.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Mission & Core Values Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light border-top border-bottom">
     <div class="container py-4">
         <div class="text-center max-w-700 mx-auto mb-5">
-            <span class="badge px-3 py-2 rounded-pill bg-primary-subtle text-primary border border-primary-subtle fw-semibold mb-2">
-                <i class="bi bi-compass me-1"></i> INSTITUTIONAL FOUNDATION
+            <span class="badge px-3 py-2 rounded-pill bg-warning-subtle text-warning-emphasis border border-warning-subtle fw-semibold mb-2">
+                <i class="bi bi-compass me-1"></i> GUIDING PRINCIPLES
             </span>
-            <h2 class="fw-extrabold text-dark mt-1">Our Mission & Strategic Vision</h2>
-            <p class="text-muted">Designed to eliminate skill blindspots, empower personnel under critical scenarios, and preserve institutional knowledge across agencies.</p>
+            <h2 class="fw-extrabold text-dark mt-1">Mission, Vision & Strategic Values</h2>
+            <p class="text-muted">The core pillars driving the architecture and execution of CapacityConnect LMS.</p>
         </div>
 
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 card-hover bg-white">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                     <div class="bg-primary bg-opacity-10 text-primary rounded-3 d-flex align-items-center justify-content-center mb-3" style="width: 52px; height: 52px;">
                         <i class="bi bi-bullseye fs-3"></i>
                     </div>
@@ -89,7 +152,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 card-hover bg-white">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                     <div class="bg-warning bg-opacity-15 text-warning-emphasis rounded-3 d-flex align-items-center justify-content-center mb-3" style="width: 52px; height: 52px;">
                         <i class="bi bi-eye fs-3"></i>
                     </div>
@@ -101,7 +164,7 @@
             </div>
 
             <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 card-hover bg-white">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4 bg-white">
                     <div class="bg-success bg-opacity-10 text-success rounded-3 d-flex align-items-center justify-content-center mb-3" style="width: 52px; height: 52px;">
                         <i class="bi bi-shield-check fs-3"></i>
                     </div>
@@ -115,15 +178,15 @@
     </div>
 </section>
 
-<!-- Platform Architecture Pillars -->
+<!-- Key Platform Capabilities -->
 <section class="py-5 bg-white">
     <div class="container py-4">
         <div class="text-center max-w-700 mx-auto mb-5">
             <span class="badge px-3 py-2 rounded-pill bg-info-subtle text-info-emphasis border border-info-subtle fw-semibold mb-2">
-                <i class="bi bi-cpu me-1"></i> ENTERPRISE CAPABILITIES
+                <i class="bi bi-cpu me-1"></i> ARCHITECTURE & MODULES
             </span>
-            <h2 class="fw-extrabold text-dark mt-1">Core Architecture & Capabilities</h2>
-            <p class="text-muted">A deep dive into the technology powering CapacityConnect LMS across all operational domains.</p>
+            <h2 class="fw-extrabold text-dark mt-1">Platform Core Capabilities</h2>
+            <p class="text-muted">Built with advanced features to manage competencies across all operational domains.</p>
         </div>
 
         <div class="row g-4">
@@ -193,11 +256,15 @@
 <!-- Call to Action Banner -->
 <section class="py-5 text-white text-center position-relative" style="background: linear-gradient(135deg, #0B2545 0%, #0A192F 100%);">
     <div class="container py-4 position-relative z-1">
-        <h2 class="display-6 fw-extrabold mb-3 text-white">Ready to Empower Your Enterprise Workforce?</h2>
-        <p class="lead text-white-50 mb-4 max-w-700 mx-auto fs-5">Get started today with CapacityConnect to assess readiness, close skill gaps, and verify operational competencies.</p>
+        <h2 class="display-6 fw-extrabold mb-3 text-white">Explore CapacityConnect Platform</h2>
+        <p class="lead text-white-50 mb-4 max-w-700 mx-auto fs-5">Join thousands of personnel enhancing operational readiness and earning verifiable credentials.</p>
         <div class="d-flex justify-content-center gap-3">
-            <a href="{{ route('register') }}" class="btn btn-warning btn-lg fw-bold text-dark px-5 py-3 shadow-lg rounded-pill">Create Account <i class="bi bi-arrow-right ms-2"></i></a>
-            <a href="{{ route('contact.index') }}" class="btn btn-outline-light btn-lg fw-semibold px-4 py-3 rounded-pill">Talk to Headquarters</a>
+            <a href="{{ route('subject-matching.index') }}" class="btn btn-warning btn-lg fw-bold text-dark px-4 py-3 shadow-lg rounded-pill">
+                <i class="bi bi-intersect me-2"></i> Subject Matchmaker
+            </a>
+            <a href="{{ route('contact.index') }}" class="btn btn-outline-light btn-lg fw-semibold px-4 py-3 rounded-pill">
+                <i class="bi bi-envelope me-2"></i> Contact Headquarters
+            </a>
         </div>
     </div>
 </section>
