@@ -21,7 +21,7 @@
                 <h6 class="text-white mb-3 text-uppercase font-weight-bold">Quick Links</h6>
                 <ul class="list-unstyled mb-0">
                     <li class="mb-2"><a href="{{ url('/') }}">Home</a></li>
-                    <li class="mb-2"><a href="#about">About Us</a></li>
+                    <li class="mb-2"><a href="{{ route('about.index') }}">About Us</a></li>
                     <li class="mb-2"><a href="{{ route('trainee.courses') }}">Course Catalog</a></li>
                     <li class="mb-2"><a href="{{ route('subject-matching.index') }}">Subject Matchmaker</a></li>
                     <li class="mb-2"><a href="{{ route('contact.index') }}">Contact Us</a></li>

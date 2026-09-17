@@ -235,7 +235,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="cc-nav-link" href="{{ url('/#about') }}">
+                    <a class="cc-nav-link {{ request()->routeIs('about*') ? 'active' : '' }}" href="{{ route('about.index') }}">
                         <i class="bi bi-info-circle"></i> About Us
                     </a>
                 </li>

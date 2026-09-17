@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\AssessmentStatsController;
 use App\Http\Controllers\Admin\AuditLogController;
@@ -249,6 +250,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Public Routes
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 Route::get('/search', [GlobalSearchController::class, 'index'])->name('search.index');
