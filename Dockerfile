@@ -24,8 +24,9 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd pdo pdo_sqlite pdo_mysql zip
 
-# Enable Apache mod_rewrite for Laravel
-RUN a2enmod rewrite
+# Enable Apache mod_rewrite for Laravel & AllowOverride All for .htaccess
+RUN a2enmod rewrite \
+    && sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -38,9 +39,10 @@ COPY . .
 # Copy built frontend assets from step 1
 COPY --from=frontend /app/public/build ./public/build
 
-# Set permissions for Laravel storage and cache
+# Set permissions for Laravel storage and cache, make entrypoint executable
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache \
+    && chmod +x /var/www/html/docker-entrypoint.sh
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
@@ -52,4 +54,4 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 
 EXPOSE 80 8080 10000
 
-CMD ["sh", "-c", "PORT=${PORT:-8080} && sed -i \"s/80/$PORT/g\" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf && mkdir -p database storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache && touch database/database.sqlite && chown -R www-data:www-data /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache && chmod -R 777 /var/www/html/database /var/www/html/storage /var/www/html/bootstrap/cache && if [ -z \"$APP_KEY\" ]; then php artisan key:generate --force; fi && php artisan optimize:clear && php artisan migrate --force && php artisan db:seed --force && apache2-foreground"]
+ENTRYPOINT ["/var/www/html/docker-entrypoint.sh"]
